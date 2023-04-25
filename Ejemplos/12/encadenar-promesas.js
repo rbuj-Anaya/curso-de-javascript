@@ -18,7 +18,6 @@ async function sumarPromesas() {
     suma += await lanzarPromesa(3);
 }
 
-
 // Encadenamos promesas que suman números
 lanzarPromesa(1)
     .then(numero => {
@@ -35,14 +34,13 @@ lanzarPromesa(1)
         suma += numero;
 
         console.log(`La suma parcial es: ${suma}`);
-        
+
         // Lanzamos otra función con promesas
         return sumarPromesas();
     })
     .finally(_ => {
         console.log(`La suma total es: ${suma}`);
     });
-
 
 /*** SALIDA ESPERADA ***/
 /*

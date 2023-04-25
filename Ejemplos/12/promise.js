@@ -18,15 +18,14 @@ function rechazarPromesa(segundos, valor) {
 
 // Funciones de callback
 function mostrarMensaje(valor) {
-	console.log(`Promesa resuelta: ${valor}`);
+    console.log(`Promesa resuelta: ${valor}`);
 }
 function mostrarError(error) {
-	console.log(`Promesa rechazada: ${error}`);
+    console.log(`Promesa rechazada: ${error}`);
 }
 function mostrarFinal() {
-	console.log("La promesa ha finalizado");
+    console.log("La promesa ha finalizado");
 }
-
 
 // Ejecutamos promesa que se resuelve a los 5 segundos
 resolverPromesa(5, "ok")

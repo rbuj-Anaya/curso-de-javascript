@@ -1,83 +1,89 @@
-<HTML>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <style>
-        html {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            padding: 10px;
-        }
-        #contador {
-            font-weight: bold;
-        }
-        input[type="button"] {
-            background-color: #FFFFFF;
-            border: 1px solid #C0C0C0;
-            padding: 5px;
-            width: 120px;
-        }
-        input[type="button"]:hover {
-            background-color: #E0E0E0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <style>
+    html {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    #contador {
+      font-weight: bold;
+    }
+
+    input[type="button"] {
+      background-color: #FFFFFF;
+      border: 1px solid #C0C0C0;
+      padding: 5px;
+      width: 120px;
+    }
+
+    input[type="button"]:hover {
+      background-color: #E0E0E0;
+    }
+  </style>
+  <title></title>
 </head>
-<BODY>
-    <form name="formTexto">
-        Escriba un texto para añadir a la lista
-        <input type="text" name="texto" />
-        <input type="button" value="Añadir" onclick="append()"><br>
-        <input type="button" value="Eliminar último" onclick="removeLast()">
-    </form>
-    <hr>
-    <p>Lista de elementos (total: <span id="contador">1</span>)</p>
-	<UL ID="lista1">
-		<LI ID="item1">Item hijo uno</LI>
-	</UL>
-	<SCRIPT TYPE="text/javascript">
+<body>
+  <form name="formTexto" id="formTexto">
+    Escriba un texto para añadir a la lista <input type="text" name="texto"> <input type="button" value="Añadir" onclick="append()"><br>
+    <input type="button" value="Eliminar último" onclick="removeLast()">
+  </form>
+  <hr>
+  <p>Lista de elementos (total: <span id="contador">1</span>)</p>
+  <ul id="lista1">
+    <li id="item1">Item hijo uno</li>
+  </ul>
+  <script type="text/javascript">
     // Declaración de constantes
     const lista = document.getElementById("lista1");
     const texto = document.formTexto.texto;
     const contador = document.getElementById("contador");
 
-	// Declaración de funciones
-	function crearItem(texto) {
-        const id = `item${lista.children.length + 1}`;
-		// Creamos nuevo elemento
-		var item = document.createElement("li");
-		// Fijamos valores
-		item.setAttribute("id", id);
-        item.innerHTML = texto;
-        
-		return item;
+    // Declaración de funciones
+    function crearItem(texto) {
+      const id = `item${lista.children.length + 1}`;
+
+      // Creamos nuevo elemento
+      var item = document.createElement("li");
+
+      // Fijamos valores
+      item.setAttribute("id", id);
+      item.innerHTML = texto;
+
+      return item;
     }
-    
-	function actualizarContador() {
-		contador.innerHTML = lista.children.length;
+
+    function actualizarContador() {
+      contador.innerHTML = lista.children.length;
     }
 
     function append() {
-        if (texto.value) {
-            // Creamos nuevo elemento
-            var item = crearItem(texto.value);
-            // Añadimos elemento al final
-            lista.appendChild(item);
-    
-            texto.value = "";
-            actualizarContador();
-        }
+      if (texto.value) {
+        // Creamos nuevo elemento
+        var item = crearItem(texto.value);
+
+        // Añadimos elemento al final
+        lista.appendChild(item);
+
+        texto.value = "";
+        actualizarContador();
+      }
     }
 
     function removeLast() {
-        if (lista.children.length) {
-            // Obtenemos último elemento por id
-            const id = `item${lista.children.length}`;
-            const ultimo = document.getElementById(id);
-    
-            // Eliminamos elemento del final
-            lista.removeChild(ultimo);
-            actualizarContador();
-        }
+      if (lista.children.length) {
+        // Obtenemos último elemento por id
+        const id = `item${lista.children.length}`;
+        const ultimo = document.getElementById(id);
+
+        // Eliminamos elemento del final
+        lista.removeChild(ultimo);
+        actualizarContador();
+      }
     }
-	</SCRIPT>
-</BODY>
-</HTML>
+  </script>
+</body>
+</html>

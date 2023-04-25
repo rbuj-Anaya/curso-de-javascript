@@ -5,14 +5,14 @@
 
 // Declaración de función
 function quitarTexto(clave, valor) {
-	return (typeof valor === "string")? undefined : valor;
+    return (typeof valor === "string") ? undefined : valor;
 }
 
 // Objeto definido con llaves
 var unCoche = {
-	marca: "Fiat",
-	numeroPlazas: 5,
-	descripcion: `Fiat viene de las siglas "Fabbrica Italiana Automobili Torino".`
+    marca: "Fiat",
+    numeroPlazas: 5,
+    descripcion: `Fiat viene de las siglas "Fabbrica Italiana Automobili Torino".`
 };
 
 

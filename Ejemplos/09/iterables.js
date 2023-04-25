@@ -12,7 +12,6 @@ function contarMas(iterador) {
 
     if (siguiente.done) {
         console.log(`No tengo nada más que contar sobre mi coche`);
-    
     } else {
         console.log(`Ooops, no te he contado lo último`);
     }
@@ -28,7 +27,6 @@ map.set('marca', "Fiat")
 
 // Obtenemos objeto iterador
 let mapIterador = map.values();
-
 
 // Recorremos el iterable
 // #1 

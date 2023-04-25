@@ -10,15 +10,15 @@ const ordenarDescendente = (a, b) => b - a;
 
 const sumar = (acumulado, valor) => acumulado + valor;
 
-const potencia2 = numero => numero**2; // Math.pow(numero, 2)
+const potencia2 = numero => numero ** 2; // Math.pow(numero, 2)
 
 function mostrarInfo(valor, indice) {
-	console.log(`- En la posición ${indice} está el valor ${valor}`);
+    console.log(`- En la posición ${indice} está el valor ${valor}`);
 }
 
 // Closure
 function esMayorQue(maximo) {
-    return function(numero) {
+    return function (numero) {
         return numero > maximo;
     }
 }
@@ -48,7 +48,7 @@ var primero = miArray.shift();
 console.log(`Después de quitar ${primero} nos queda: ${miArray}`);
 
 // Restauramos primer y último elemento
-miArray = [ primero, ...miArray, ultimo ];
+miArray = [primero, ...miArray, ultimo];
 console.log(`Mi array vuelve a contener: ${miArray}`);
 
 
@@ -81,7 +81,7 @@ console.log(`En mi array ${numeroMayorDiez ? "hay" : "no hay"} un número mayor 
 // Comprobamos si todos/algunos elementos cumplen una condición
 const todosPares = miArray.every(esPar);
 const algunPar = miArray.some(esPar);
-console.log(`En mi array ${todosPares ? "todos": "no todos"} los números son pares pero ${algunPar ? "alguno" : "ninguno"} es par`);
+console.log(`En mi array ${todosPares ? "todos" : "no todos"} los números son pares pero ${algunPar ? "alguno" : "ninguno"} es par`);
 
 // Sumamos todos los elementos
 const suma = miArray.reduce(sumar);

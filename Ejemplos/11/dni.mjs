@@ -1,6 +1,6 @@
 /*
-    Capítulo: 11
-    Descripción: Módulo DNI
+	Capítulo: 11
+	Descripción: Módulo DNI
 */
 
 // Declaración de constante
@@ -21,11 +21,11 @@ export default function validarLetra(dni) {
 		// Extraemos los dígitos
 		var numeroDNI = dni.substr(0, 8);
 		// Extraemos la letra y pasamos a mayúsculas
-        var letraDNI = dni.substr(-1).toUpperCase();
+		var letraDNI = dni.substr(-1).toUpperCase();
 		// Comprobamos la letra
-        return calcularLetra(numeroDNI) == letraDNI;
-        
-	// Si no cumple el patrón, lanzamos excepción
+		return calcularLetra(numeroDNI) == letraDNI;
+
+		// Si no cumple el patrón, lanzamos excepción
 	} else {
 		const mensaje = `${dni} no es un DNI`;
 		throw new Error(mensaje);

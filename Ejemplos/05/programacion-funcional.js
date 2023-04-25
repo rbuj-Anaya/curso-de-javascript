@@ -1,18 +1,18 @@
 /*
-    Capítulo: 5
-    Descripción: Programación funcional
+  Capítulo: 5
+  Descripción: Programación funcional
 */
 let resultado;
 
 // Definición de closure con dos niveles hijo
 function calcularVolumen(ancho) {
-	// Función hija de calcularVolumen y padre de la siguiente
-	return function(alto) {
-		// Función hija
-		return function(profundo) {
-			return ancho * alto * profundo;
-		}
-	}
+  // Función hija de calcularVolumen y padre de la siguiente
+  return function (alto) {
+    // Función hija
+    return function (profundo) {
+      return ancho * alto * profundo;
+    }
+  }
 }
 
 
@@ -34,7 +34,7 @@ console.log('Closure con ancho y alto fijo:', resultado);
 
 /*** SALIDA ESPERADA ***/
 /*
-    Closure completo: 60
-    Closure con ancho fijo: 60
-    Closure con ancho y alto fijo: 60
+  Closure completo: 60
+  Closure con ancho fijo: 60
+  Closure con ancho y alto fijo: 60
 */

@@ -14,15 +14,14 @@ function rechazarPromesa(valor) {
 
 // Funciones de callback
 function mostrarMensaje(valor) {
-	console.log(`Promesa resuelta: ${valor}`);
+    console.log(`Promesa resuelta: ${valor}`);
 }
 function mostrarError(error) {
-	console.log(`Promesa rechazada: ${error}`);
+    console.log(`Promesa rechazada: ${error}`);
 }
 function mostrarFinal() {
-	console.log("La promesa ha finalizado");
+    console.log("La promesa ha finalizado");
 }
-
 
 // Lanzamos promesas que se resuelven (* valores mismo tipo)
 var promesasOk = [
@@ -35,7 +34,6 @@ Promise.race(promesasOk)
     .catch(mostrarError)
     .finally(mostrarFinal);
 
-
 // Lanzamos promesas que se resuelven (* valores distinto tipo)
 var promesasDistintas = [
     resolverPromesa("A"),
@@ -47,7 +45,6 @@ Promise.race(promesasDistintas)
     .catch(mostrarError)
     .finally(mostrarFinal);
 
-
 // Lanzamos promesas con una que se rechaza
 var promesasError = [
     resolverPromesa(1),
@@ -58,7 +55,6 @@ Promise.race(promesasError)
     .then(mostrarMensaje)
     .catch(mostrarError)
     .finally(mostrarFinal);
-
 
 // Lanzamos promesas y se rechaza la primera
 var promesasErrorPrimera = [

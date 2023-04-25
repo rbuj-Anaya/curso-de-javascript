@@ -1,79 +1,75 @@
-<HTML>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <style>
-        html {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            padding: 10px;
-        }
-        input[type="button"] {
-            background-color: #FFFFFF;
-            border: 1px solid #C0C0C0;
-            padding: 5px;
-            width: 140px;
-        }
-        input[type="button"]:hover {
-            background-color: #E0E0E0;
-        }
-        li.document, li.LI {
-            margin-bottom: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <style>
+    html {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    input[type="button"] {
+      background-color: #FFFFFF;
+      border: 1px solid #C0C0C0;
+      padding: 5px;
+      width: 140px;
+    }
+
+    input[type="button"]:hover {
+      background-color: #E0E0E0;
+    }
+
+    li.document,
+    li.LI {
+      margin-bottom: 10px;
+    }
+  </style>
+  <title></title>
 </head>
-<BODY>
-    <h3>Pulse sobre cualquier parte de la página para ver los eventos generados</h3>
-    
-	<FORM
-		ID="formulario1"
-		NAME="formEventos"
-	>
-	<INPUT
-		TYPE="button"
-		ID="boton"
-		VALUE="Púlsame"
-    />
-    <br>
+<body>
+  <h3>Pulse sobre cualquier parte de la página para ver los eventos generados</h3>
+  <form id="formulario1" name="formEventos">
+    <input type="button" id="boton" value="Púlsame"><br>
     <p><input type="checkbox" id="stop"> Evitar propagación</p>
-    </FORM>
-    <hr>
-    <p>Listado de eventos generados</p>
-    <ul id="listaEventos">
-    </ul>
-    <SCRIPT TYPE="text/javascript">
+  </form>
+  <hr>
+  <p>Listado de eventos generados</p>
+  <ul id="listaEventos"></ul>
+  <script type="text/javascript">
     // Buscamos por id
     const boton = document.getElementById("boton");
     const stop = document.getElementById("stop");
     const lista = document.getElementById("listaEventos");
-    
+
     // Declaración de función
     function pintarEvento(evento) {
-		// Creamos nuevo ítem
-		var item = document.createElement("li");
-		const tipo = evento.type;
-        const elemento = evento.target.tagName;
-        const origen = evento.currentTarget.tagName || "document";
-        
-        item.innerHTML = `Evento ${tipo} sobre ${elemento} (manejador en ${origen})`;
-        item.onmouseover = pintarEvento;
-        item.className = origen;
-        
-		// Añadimos ítem a la lista
-        lista.appendChild(item);
+      // Creamos nuevo ítem
+      var item = document.createElement("li");
+      const tipo = evento.type;
+      const elemento = evento.target.tagName;
+      const origen = evento.currentTarget.tagName || "document";
 
-        // Si el checkbox está seleccionado, no propagamos evento
-        if (stop.checked) {
-            evento.stopPropagation();
-        }
-	}
+      item.innerHTML = `Evento ${tipo} sobre ${elemento} (manejador en ${origen})`;
+      item.onmouseover = pintarEvento;
+      item.className = origen;
 
-	// Asignación de manejadores
-	boton.onclick = pintarEvento;
+      // Añadimos ítem a la lista
+      lista.appendChild(item);
+
+      // Si el checkbox está seleccionado, no propagamos evento
+      if (stop.checked) {
+        evento.stopPropagation();
+      }
+    }
+
+    // Asignación de manejadores
+    boton.onclick = pintarEvento;
     boton.onmousedown = pintarEvento;
-    
+
     document.onclick = pintarEvento;
-    
-	lista.onclick = pintarEvento;
-	</SCRIPT>
-</BODY>
-</HTML>
+
+    lista.onclick = pintarEvento;
+  </script>
+</body>
+</html>

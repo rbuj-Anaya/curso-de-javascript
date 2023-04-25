@@ -6,15 +6,15 @@
 
 // Declaración de objetos
 var unCoche = {
-	marca: "Fiat",
+    marca: "Fiat",
     numPlazas: 5,
     color: "Blanco",
-	acelerar: function () {
-		console.log("brummm");
-	}
+    acelerar: function () {
+        console.log("brummm");
+    }
 };
 var colorCoche = {
-	color: "Azul"
+    color: "Azul"
 };
 
 

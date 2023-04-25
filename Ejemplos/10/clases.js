@@ -10,11 +10,11 @@ function mostrarNombre() {
 
 // Declaración de clase
 class Figura {
-	constructor(tipo) {
-		this.tipo = tipo;
-		this.mensaje = `Soy un ${this.tipo}`;
+    constructor(tipo) {
+        this.tipo = tipo;
+        this.mensaje = `Soy un ${this.tipo}`;
     }
-    
+
     static mostrarNombreClase() {
         console.log(`Soy la clase ${this.name}`);
     }
@@ -31,7 +31,7 @@ Figura.mostrarNombreClase();
 
 
 // Mostramos las propiedades de la instancia
-for(let propiedad in miFigura) {
+for (let propiedad in miFigura) {
     // Filtramos las propiedades que no sean función
     const valor = miFigura[propiedad];
     if (typeof valor != "function") {

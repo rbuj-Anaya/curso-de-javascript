@@ -31,9 +31,9 @@ var primeraAsignaturaTarde = turnoTardePrimeraPlanta[0];
 console.log(`La primera asignatura de la tarde en la planta uno es ${primeraAsignaturaTarde}`);
 
 // Obtenemos valores mediante desestructuración
-var [ , segundaPlanta] = plantas;
-var [ turnoMananaPlanta2, turnoTardePlanta2 ] = segundaPlanta;
-var [ primeraAsignatura, ...restoAsignaturas ] = turnoTardePlanta2;
+var [, segundaPlanta] = plantas;
+var [turnoMananaPlanta2, turnoTardePlanta2] = segundaPlanta;
+var [primeraAsignatura, ...restoAsignaturas] = turnoTardePlanta2;
 console.log(`La primera asignatura de la tarde en la planta dos es ${primeraAsignatura}`);
 console.log(`Por la tarde en la planta dos hay ${restoAsignaturas.length} asignaturas más: ${restoAsignaturas.join(' y ')}`);
 

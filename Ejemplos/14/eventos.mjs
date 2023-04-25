@@ -29,7 +29,6 @@ function mostrarListeners() {
     });
 }
 
-
 // Añadimos manejadores especiales
 console.log("-- Manejadores especiales --");
 miEmitter.on("removeListener", (evento, fnListener) => {
@@ -53,7 +52,6 @@ mostrarListeners();
 // Generamos evento
 console.log("\n-- Generamos evento \"mensaje\" --");
 miEmitter.emit("mensaje", "Buenos días");
-
 
 
 // Eliminamos un manejador

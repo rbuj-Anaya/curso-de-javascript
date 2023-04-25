@@ -5,14 +5,14 @@
 
 // Declaración de función
 function calcularSumatorio(hasta) {
-	// Condición de parada
-	if (hasta == 0) {
-		return 0;
-	// Realizamos operaciones
-	} else {
+    // Condición de parada
+    if (hasta == 0) {
+        return 0;
+        // Realizamos operaciones
+    } else {
         console.log(`Sumamos ${hasta}`);
-		return hasta + calcularSumatorio(hasta - 1);
-	}
+        return hasta + calcularSumatorio(hasta - 1);
+    }
 }
 
 

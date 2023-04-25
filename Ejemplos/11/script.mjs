@@ -30,7 +30,7 @@ try {
     const dniValido = validarLetra(miDNI);
     console.log(`Mi DNI ${miDNI} ${comprobarValidez(dniValido)}`);
 
-} catch(excepcion) {
+} catch (excepcion) {
     manejarExcepcion(excepcion);
 }
 
@@ -39,7 +39,7 @@ try {
     const dniValido = validarLetra(miDNIFalso);
     console.log(`Mi DNI ${miDNIFalso} ${comprobarValidez(dniValido)}`);
 
-} catch(excepcion) {
+} catch (excepcion) {
     manejarExcepcion(excepcion);
 }
 
@@ -49,10 +49,9 @@ try {
     const dniValido = validarLetra(cadena);
     console.log(`Mi DNI ${cadena} ${comprobarValidez(dniValido)}`);
 
-} catch(excepcion) {
+} catch (excepcion) {
     manejarExcepcion(excepcion);
 }
-
 
 /*** SALIDA ESPERADA ***/
 /*

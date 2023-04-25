@@ -5,9 +5,9 @@
 
 // Declaración de clase
 class Figura {
-	constructor(tipo) {
-		this.tipo = tipo;
-		this.mensaje = `Soy un ${this.tipo}`;
+    constructor(tipo) {
+        this.tipo = tipo;
+        this.mensaje = `Soy un ${this.tipo}`;
     }
 
     static convertirEnMayusculas(cadena) {
@@ -32,8 +32,6 @@ class Cuadrado extends Figura {
 
         console.log(`Soy la clase ${nombre}`);
     }
-
-    
 }
 
 // Creamos instancia de subclase
@@ -45,7 +43,7 @@ Cuadrado.mostrarNombreClase();
 
 
 // Mostramos las propiedades de la instancia
-for(let propiedad in miCuadrado) {
+for (let propiedad in miCuadrado) {
     // Filtramos las propiedades que no sean función
     const valor = miCuadrado[propiedad];
     if (typeof valor != "function") {
@@ -56,7 +54,6 @@ for(let propiedad in miCuadrado) {
 
 // Mostramos info de la instancia (* método heredado)
 miCuadrado.mostrarNombreInstancia();
-
 
 /*** SALIDA ESPERADA ***/
 /*

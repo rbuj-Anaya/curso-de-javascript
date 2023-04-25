@@ -9,7 +9,7 @@ function enMayusculas(clave, valor) {
 }
 
 function quitarTexto(clave, valor) {
-	return (typeof valor === "string") ? undefined : valor;
+    return (typeof valor === "string") ? undefined : valor;
 }
 
 // Declaración de variable
