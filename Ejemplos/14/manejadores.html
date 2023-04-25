@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+	<meta charset="UTF-8">
+	<style>
+		html {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 16px;
+			padding: 10px;
+		}
+		input[type="button"] {
+			background-color: #FFFFFF;
+			border: 1px solid #C0C0C0;
+			padding: 5px;
+			width: 140px;
+		}
+		input[type="button"]:hover {
+			background-color: #E0E0E0;
+		}
+	</style>
+	<SCRIPT TYPE="text/javascript">
+	// Declaración de funciones
+	function mostrarMensaje() {
+		alert("¡Clic aquí!");
+	}
+	
+	function eliminarManejador(elemento) {
+		// Desasignamos manejafor
+		elemento.onclick = null;
+		// Cambiamos propiedad
+		elemento.value = "Sin manejador";
+	}
+	</SCRIPT>
+</HEAD>
+<BODY>
+	<H3>Pulsa en los botones</H3>
+	<FORM
+		ID="formulario1"
+		NAME="formBotones"
+	>
+	<INPUT
+		TYPE="button"
+		ID="boton1"
+		VALUE="Ver mensaje"
+	/>
+	<INPUT
+		TYPE="button"
+		ID="boton2"
+		VALUE="Eliminar manejador"
+	/>
+	</FORM>
+	<SCRIPT TYPE="text/javascript">
+	// Buscamos por id
+	var boton1 = document.getElementById("boton1");
+	var boton2 = document.getElementById("boton2");
+	// Asignamos manejadores
+	boton1.onclick = mostrarMensaje;
+	boton2.onclick = () => eliminarManejador(boton1);
+	</SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            html {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 18px;
+            }
+
+            .bold {
+                font-weight: bold;
+            }
+
+            div {
+                margin: 10px;
+                padding: 10px;
+                border: 2px solid #000088;
+                background-color: #F0F0F0;
+            }
+
+            ul {
+                font-family: 'Courier New', Courier, monospace;
+            }
+        </style>
+        <SCRIPT TYPE="module" SRC="script.mjs"></SCRIPT>
+    </head>
+    <body>
+        <div class="bold">Abra la consola para ver los mensajes generados</div>
+
+        <div>Salida esperada
+            <ul>
+                <li>A mi DNI 12345678 le corresponde la letra Z</li>
+                <li>Mi DNI 12345678Z es válido</li>
+                <li>Mi DNI 12345678A no es válido</li>
+                <li>Ocurrió un problema: javascript no es un DNI</li>
+            </ul>
+        </div>
+    </body>
+</html>
